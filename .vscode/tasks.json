@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "clang++ build active file",
+        "command": "/usr/bin/clang++",
+        "args": [
+          "${file}",
+          "-std=c++14",
+          "-g",
+          "-O0",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}",
+          /*
+           "&&",
+           "echo",
+           "-e",
+           "'\\e[1m\\e[32mBuild Task is Completed.\\e[0m\\n'",
+           "&&",
+           "${fileDirname}/${fileBasenameNoExtension}"
+           */
+        ],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
