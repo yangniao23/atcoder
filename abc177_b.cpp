@@ -1,24 +1,32 @@
-#include <bits/stdc++.h>
-#define rep(i,n) for(int i=0;i<n;++i)
-#define ll long long
-inline int roundup(int a, int b) { return (((a + (b -1)) / b)); }
-using namespace std;
+//copied from https://atcoder.jp/contests/abc177/editorial/87
 
-signed main(void) {
-    string s, t;
-    cin >> s >> t;
-    if(s.find(t) != string::npos){
-        cout << "0\n"; return 0;
-    }
-    for (int i = t.size() -1; i >= 0; i--)
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+ 
+int main() {
+    string S, T;
+    cin >> S >> T;
+ 
+    //答えansを仮置きする。
+    //これが十分に大きくないと不正解となるので、
+    //この値なら絶対に正しい答えが出る、という値を仮置きすること
+    int ans = T.size(), diff;
+ 
+    //Sの何文字目から調べるかを全探索する
+    for (int start = 0; start <= S.size() - T.size(); start++)
     {
-        for(int j=0;j<(t.size()-i);++j) {
-            if(s.find(t.substr(j, i+j)) >= j && s.find(t.substr(j, i+j)) != string::npos){
-                 cout << (t.size()-i) <<'\n'; return 0;
+        diff = 0;
+        for (int i = 0; i < T.size(); i++)
+        {
+            if (T[i] != S[start + i]) {
+                diff++;
             }
         }
+        
     }
-    
-    cout << t.size() << '\n';
-    return 0;
+    ans = min(ans, diff);
+ 
+    cout << ans << endl;
 }
