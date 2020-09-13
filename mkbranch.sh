@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-[['$1' == '']] && echo "Need branch name(contest No)." && exit 1
 
 git checkout -b abc$1
 rename NNN $1 abcNNN_*
