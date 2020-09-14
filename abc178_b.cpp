@@ -5,11 +5,8 @@ inline int roundup(int a, int b) { return (((a + (b -1)) / b)); }
 using namespace std;
 
 signed main(void) {
-    ll a, b, c, d, x, y;
+    ll a, b, c, d;
     cin >> a >> b >> c >> d;
-    if(a >= 0 && c >= 0) x = b, y = d;
-    if(b <= 0 && d >= 0) x = a, y = d;
-    
-    cout << x*y << '\n';
+    cout << max(max(a*c, a*d), max(b*c, b*d)) << '\n';
     return 0;
 }
