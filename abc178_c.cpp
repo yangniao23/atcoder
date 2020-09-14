@@ -3,25 +3,23 @@
 #define ll long long
 inline int roundup(int a, int b) { return (((a + (b -1)) / b)); }
 using namespace std;
+const ll mod=1000000007;
+
+
+ll powmod(ll x,ll y){
+    ll res=1;
+    for(ll i=0;i<y;i++){
+        res=res*x%mod;
+    }
+    return res;
+}
 
 signed main(void) {
     int n;
-    ll sum = 0;
     cin >>  n;
-    if(n < 2) {
-        cout << 0;
-        return 0;
-    }
-    if(n == 2) {
-        cout << 2;
-        return 0;
-    }
+    ll ans = (powmod(10, n) - powmod(9, n) - powmod(9, n) + powmod(8, n))%mod;
+    ans=(ans+mod)%mod; // ansが負の値になることを予期する
 
-    int lenght = n - 2;
-    rep(i, lenght) {
-        sum = 20*(3 *(i+1));
-        sum = sum % 1000000007;
-    }
-    cout << sum;
+    cout << ans << '\n';
     return 0;
 }
