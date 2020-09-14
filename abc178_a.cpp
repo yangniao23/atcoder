@@ -7,6 +7,6 @@ using namespace std;
 signed main(void) {
     int x;
     cin >> x;
-    (x == 0)? cout << 1:cout << 0;
+    cout << 1-x << '\n';
     return 0;
 }
