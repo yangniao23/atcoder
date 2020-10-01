@@ -7,7 +7,6 @@ inline ll powmod(ll x, ll y) {ll res=1; for(ll i=0;i<y;i++){ res=res*x%mod; } re
 using namespace std;
 
 signed main(void) {
-    bool flag = false;
     int n;
     ll count = 0;
     cin >> n;
@@ -20,8 +19,9 @@ signed main(void) {
             }
             if(i != j) count++;
         }
-        if(flag == true) break;
     }
     cout << count << '\n';
     return 0;
 }
+
+    
