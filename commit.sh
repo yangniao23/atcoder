@@ -4,5 +4,6 @@ for i in a b c d; do
     git commit
 done
 rm commit.sh *.out
+git push --all origin
 git checkout master
 git checkout .
