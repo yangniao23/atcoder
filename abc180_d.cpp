@@ -9,19 +9,10 @@ using namespace std;
 signed main(void) {
     ll x, y, a, b, s=0;
     cin >> x >> y >> a >> b;
-    while(x <= y) {
-        if(x*a >= y && x+b >= y) {
-            break;
-        }
-        if(x*a < x+b) {
-            x *= a;
-            s++;
-        } else {
-            int n = y/x;
-            s += n;
-            break;
-        }
+    while((double)a*x<=2e18 && a*x<=x+b && a*x<y) {
+        x*=a;
+        s++;
     }
-    cout << s << '\n';
+    cout << s+(y-1-x)/b << '\n';
     return 0;
 }
