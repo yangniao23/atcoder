@@ -6,3 +6,8 @@
 
 コミットメッセージ
 [上の評価] [M:S]
+
+## mkbranch.sh の使い方
+./mkbranch.sh [branch name]
+Example:
+./mkbranch.sh abc000
