@@ -7,13 +7,18 @@ inline ll powmod(ll x, ll y) {ll res=1; for(ll i=0;i<y;i++){ res=res*x%mod; } re
 using namespace std;
 
 signed main(void) {
-    ll n, d, k;
-    cin >> n >> d >> k;
-    ll p[n], s[n];
-    rep(i, n) {
-        cin >> p[i] >> s[i];
-    }
+    ll n, m;
+    cin >> n >> m;
+    ll t[n], a[m], b[m], c[m];
+    rep(i,n) cin >> t[i];
+    rep(i, m) cin >> a[i] >> b[i] >> c[i];
 
+    rep(i, m) {
+        if(t[b[i]] == 1 && (t[c[i]] == 2 || t[c[i]] == 3) && t[a[i]] == 1) {
+            cout << -1 << '\n';
+            return 0;
+        }
+    }
     
     return 0;
 }
