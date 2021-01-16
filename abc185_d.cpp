@@ -21,7 +21,7 @@ signed main(void) {
     if(a[m-1] != n)a.push_back(n);
     sort(a.begin(), a.end());
     cout << a.size() << '\n';
-    rep(i, a.size()-2-1) {
+    rep(i, a.size()-3) {
         a_distance = min(a_distance, (a[i+1] - a[i]));
         
         
